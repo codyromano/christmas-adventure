@@ -6,7 +6,7 @@ import GameServerClient from '../../GameServerClient';
 import getDefaultSharedGameState from '../../getDefaultSharedGameState';
 // import PreloadImage from '../PreloadImage';
 import './ArenaPage.css';
-import characterData from '../../data/characterSelect.json';
+import Avatar from '../Avatar';
 import ActionPanel from '../ActionPanel';
 import Star from '../Star';
 import { CollisionProvider } from '../../collision';
@@ -16,42 +16,6 @@ function getDefaultPrivateGameState() {
     _player: {}
   };
 }
-
-const mapNamesToImages = characterData.reduce((map, character) => {
-  map[character.firstName] = character.avatarImageArena;
-  return map;
-}, {});
-
-const Avatar = ({
-  name,
-  coords,
-  size
-}) => {
-  const styles = {
-    top: `${coords.y}px`,
-    left: `${coords.x}px`,
-    height: `${size.height}px`,
-    width: `${size.width}px`,
-    backgroundImage: `url(${mapNamesToImages[name]})`,
-    backgroundSize: 'cover'
-  };
-  return (
-    <div className="avatar">
-      <div
-        alt={`Avatar for ${name}`}
-        className="avatar-image"
-        style={styles}
-      ></div>
-      {/*
-      <img
-        alt={`Avatar for ${name}`}
-        className="avatar-image"
-        src={mapNamesToImages[name]}
-        style={styles}
-      />*/}
-    </div>
-  );
-};
 
 class ArenaPage extends React.Component {
   constructor(props) {
