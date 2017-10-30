@@ -1,0 +1,49 @@
+.heading-bar {
+  font-size: var(--font-size-large);
+  padding-bottom: var(--row-spacing);
+}
+.character-select-wrapper {
+  max-width: 40rem;
+  min-width: 20rem;
+  margin: 0 auto;
+  padding: 0.5rem;
+}
+.character-select {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 auto;
+  font-family: Lobster;
+}
+.character-select-name {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  display: block;
+  background: rgba(87,214,147, 0.75);
+  background: var(--color-green-transparent);
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  color: #fff;
+
+  font-size: var(--font-size-large);
+}
+.character-select-option {
+  position: relative;
+  /* height: 25vh; */
+  flex-basis: 32%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  padding: 1vh 1vw;
+  padding-bottom: 40%;
+  margin-bottom: 3%;
+
+  transition: all ease 0.25s;
+}
+.character-select-option:hover {
+  transform: scale(1.05);
+}

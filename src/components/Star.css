@@ -1,0 +1,23 @@
+.star {
+  position: absolute;
+  background: url(/images/star.png) no-repeat;
+  background-size: cover;
+}
+.star-collected {
+  z-index: 2;
+  animation: spin ease 5s;
+  animation-fill-mode: forwards;
+}
+@keyframes spin {
+  0% {
+    transform: rotate3d(0deg) scale(1);
+  }
+  90% {
+    transform: rotate(360deg) scale(2);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(0deg) scale(4);
+    opacity: 0;
+  }
+}

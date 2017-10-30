@@ -1,0 +1,10 @@
+/* Simple reset */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: var(--font-size-normal);
+
+  /* Prevent text highlighting on mobile tap */
+  user-select: none;
+}

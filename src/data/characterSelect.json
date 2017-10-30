@@ -1,0 +1,90 @@
+[
+  {
+    "firstName": "Cait",
+    "image": "images/character-select-cait.jpg",
+    "avatarImage": "images/avatar-cait-bg-effect.png",
+    "avatarImageArena": "images/avatar-cait.png",
+    "aboutPowers": [
+      {
+        "title": "Laser light show",
+        "about": "A powerful energy attack that stuns enemies"
+      },
+      {
+        "title": "Data science research",
+        "about": "Reveals important clues"
+      }
+    ]
+  },
+  {
+    "firstName": "Kim",
+    "image": "images/character-select-kim.jpg",
+    "aboutPowers": [
+      {
+        "title": "Director says freeze",
+        "about": "Temporarily slow down time"
+      },
+      {
+        "title": "Improve healthcare",
+        "about": "Replenishes the health of all other players"
+      }
+    ]
+  },
+  {
+    "firstName": "Amanda",
+    "image": "images/character-select-amanda.jpg",
+    "aboutPowers": [
+      {
+        "title": "Surf expert",
+        "about": "Move quickly across water"
+      },
+      {
+        "title": "Law and order",
+        "about": "Ability to bail characters out of jail"
+      }
+    ]
+  },
+  {
+    "firstName": "Chris",
+    "image": "images/character-select-chris.jpg",
+    "avatarImageArena": "images/avatar-chris.png",
+    "avatarImage": "images/avatar-chris-bg-effect.png",
+    "aboutPowers": [
+      {
+        "title": "Whirley bird",
+        "about": "Use a helicopter to reach high places"
+      },
+      {
+        "title": "Network specialist",
+        "about": "Transport items between hard-to-reach locations"
+      }
+    ]
+  },
+  {
+    "firstName": "Marsheila",
+    "image": "images/character-select-marsheila.jpg",
+    "aboutPowers": [
+      {
+        "title": "Garden magic",
+        "about": "Grow vines to reach high places"
+      },
+      {
+        "title": "Finance expert",
+        "about": "Money pops out of trees when you run into them"
+      }
+    ]
+  },
+  {
+    "firstName": "Jack",
+    "image": "images/character-select-jack.jpg",
+    "aboutPowers": [
+      {
+        "title": "World traveler",
+        "about": "Ability to teleport across the game map"
+      },
+      {
+        "title": "Boyfriend bonus",
+        "about": "Gains +20% XP when in close proximity to Amanda"
+      }
+    ]
+  }
+]

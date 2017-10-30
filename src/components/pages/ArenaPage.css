@@ -1,0 +1,15 @@
+.arena-wrapper {
+  position: relative;
+  background: #000;
+  height: 70vh;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  background: url(http://spiralgraphics.biz/packs/snow_ice/previews/Snow.jpg) repeat;
+}
+.avatar-image {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  transition: all ease 0.25s;
+}

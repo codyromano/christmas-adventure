@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Lobster');
+
+:root {
+  --gutter-padding: 1rem;
+  --row-spacing: 1rem;
+  --font-size-large: 1.5rem;
+  --font-size-normal: 1rem;
+  --font-size-small: 0.8rem;
+  --border-radius-standard: 0.25rem;
+
+  --color-red: rgba(192, 57, 43,1.0);
+  --color-green: rgba(39, 174, 96, 1.0);
+  --color-gray: #eee;
+  --color-green-transparent: rgba(39, 174, 96, 0.75);
+
+  --button-secondary-bg-color: rgba(238, 238, 238, 0.4);
+  --button-primary-bg-color: rgba(39, 174, 96, 0.4);
+  --button-primary-color: #000;
+
+  --menu-bar-height: 3rem;
+}
+
+body, html {
+  min-height: 100%;
+}
+
+body {
+  background: url(/images/snow-bg-edited.jpg) no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+.button {
+  text-decoration: none;
+  border: solid #000 0.04rem;
+  border-radius: 0.25em;
+  padding: 0.75em 1.25em;
+  color: #000;
+  background-color: var(--button-secondary-bg-color);
+}
+.button-primary {
+  background-color: var(--button-primary-bg-color);
+  color: var(--button-primary-color);
+}
+.button + .button {
+  margin-left: 0.5rem;
+}
+
+.button-large {
+  font-size: var(--font-size-large);
+}
+
+
+h2, li {
+  padding-bottom: var(--row-spacing);
+}
+.main-content {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+header.menu-bar {
+  margin-bottom: var(--gutter-padding);
+}
+
+.menu-bar {
+  display: flex;
+  align-items: center;
+  height: var(--menu-bar-height);
+  width: 100%;
+
+  padding: var(--gutter-padding) 0;
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+  background-color: #D7E6EC;
+  background-color: #446D8E;
+  background-color: #A22C27;
+  background-color: var(--color-red);
+  color: #fff;
+}
+
+.logo-wrapper {
+  text-align: center;
+}
+.logo {
+  font-weight: 100;
+  font-size: var(--font-size-large);
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: Lobster;
+}
+
+footer.menu-bar {
+  position: fixed;
+  bottom: 0;
+}
+
+main {
+  overflow: hidden;
+  height: 100vh;
+  padding-bottom: var(--menu-bar-height);
+}

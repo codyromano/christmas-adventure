@@ -1,0 +1,84 @@
+.confirm-image-wrapper {
+  position: relative;
+  margin-bottom: var(--row-spacing);
+
+  --image-width: 50%;
+  --image-padding-bottom: 50%;
+}
+.confirm-image {
+  position: relative;
+  z-index: 2;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: block;
+  width: var(--image-width);
+  padding: 0;
+  padding-bottom: var(--image-padding-bottom);
+  animation: fly-in ease 0.5s;
+}
+.confirm-character-name {
+  font-size: var(--font-size-large);
+  color: #000;
+}
+.about-power-list {
+  list-style: none;
+  padding-left: 2rem;
+  padding-bottom: var(--row-spacing);
+}
+.about-power {
+  position: relative;
+}
+.about-power > strong {
+  display: block;
+  padding-bottom: 0.25rem;
+}
+.about-power::before {
+  content: '';
+  position: absolute;
+  top: -0.5rem;
+  left: -2.5rem;
+  background: url(/images/power-gift-icon.png) no-repeat;
+  background-size: cover;
+  display: block;
+  height: 2rem;
+  width: 2rem;
+}
+.image-pulse {
+  z-index: 1;
+  position: absolute;
+  top: 1%;
+  left: 0%;
+  content: '';
+  display: block;
+  width: var(--image-width);
+  background-color: rgba(87,214,147, 0.75);
+  padding-bottom: var(--image-padding-bottom);
+  opacity: 0.5;
+
+  animation: pulse-border ease 2s 1;
+}
+@keyframes fly-in {
+  0% {
+    transform: scale(3) rotate(180deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+@keyframes pulse-border {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.20);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,13 @@
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.actionButton {
+  font-size: var(--font-size-small);
+  flex-basis: 32.333%;
+  margin: 0 0 0.25rem 0;
+}
+.actionButton + .actionButton {
+  margin-left: 0;
+}

@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Lobster');
+
+:root {
+  --gutter-padding: 1rem;
+  --row-spacing: 1rem;
+  --font-size-large: 1.5rem;
+  --font-size-normal: 1rem;
+  --font-size-small: 0.8rem;
+  --border-radius-standard: 0.25rem;
+}
+
+body {
+  font-size: 15px;
+  width: 100%;
+  min-height: 100vh;
+
+  /* Light blue */
+  background-color: #D7E6EC;
+}
+
+.row {
+  margin-bottom: var(--gutter-padding);
+}
+
+/* Simple reset */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: var(--font-size-normal);
+
+  /* Prevent text highlighting on mobile tap */
+  user-select: none;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: bold;
+  font-family: Lobster;
+}
+
+h1 {
+  color: #447d8e;
+  margin-bottom: var(--row-spacing);
+  font-size: var(--font-size-large);
+}
+
+label {
+  font-weight: bold;
+  font-size: var(--font-size-large);
+}
+
+.card {
+  background-color: #BAD6DE;
+  padding: var(--gutter-padding);
+  border: solid #447D8E 0.2rem;
+  border-radius: var(--border-radius-standard);
+
+  max-width: 20rem;
+  margin: 0 auto;
+}
+
+.App, button, input {
+  font-family: 'Roboto', serif;
+  outline-width: 0;
+}
+
+.App {
+  position: relative;
+  width: 100%;
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: var(--gutter-padding);
+}
+.actions {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background-color: #eee;
+  margin: 0;
+  padding: 0;
+}
+.actionButton {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+}
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 1rem;
+}
+
+.santa {
+  transition: all ease 0.25s;
+  top: 10vh;
+  width: 10vw;
+  height: 10vh;
+}
+
+input[type=text] {
+  font-size: 1.25rem;
+  border: solid #D7E6EC 0.25rem;
+  padding: 0.5rem;
+}
+
+button {
+  appearance: none;
+  font-size: 1.25rem;
+  background-color: #447D8E;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--border-radius-standard);
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
