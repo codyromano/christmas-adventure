@@ -17,6 +17,12 @@ function notifySubscribers(callbackArrayName, ...args) {
   this[callbackArrayName].forEach(callback => callback(...args));
 }
 
+const mapEventNameToSubscriberType = {
+  [Constants.BROADCAST_CLIENT_STATE] : 'playerSubscribers',
+  [Constants.BROADCAST_STATE] : 'stateSubscribers',
+  [Constants.UI_MESSAGE] : 'uiMessageSubscribers'
+};
+
 export default class GameServerClient {
   constructor() {
     this.status = NEVER_STARTED;
@@ -25,6 +31,7 @@ export default class GameServerClient {
     this.errorSubscribers = [];
     this.playerSubscribers = [];
     this.stateSubscribers = [];
+    this.uiMessageSubscribers = [];
 
     this.socket = openSocket(
       `${Constants.WEBSOCKET_URL}:${Constants.WEBSOCKET_PORT}`
@@ -34,14 +41,11 @@ export default class GameServerClient {
       'connect_error',
       this.handleError.bind(this)
     );
-    this.socket.on(
-      Constants.BROADCAST_CLIENT_STATE,
-      notifySubscribers.bind(this, 'playerSubscribers')
-    );
-    this.socket.on(
-      Constants.BROADCAST_STATE,
-      notifySubscribers.bind(this, 'stateSubscribers')
-    );
+
+    for (const eventName in mapEventNameToSubscriberType) {
+      const subscriberType = mapEventNameToSubscriberType[eventName];
+      this.socket.on(eventName, notifySubscribers.bind(this, subscriberType));
+    }
   }
   logout() {
     if (this.sessionId) {
@@ -67,6 +71,9 @@ export default class GameServerClient {
   }
   onSharedStateChange(callback) {
     this.stateSubscribers.push(callback);
+  }
+  onUINotice(callback) {
+    this.uiMessageSubscribers.push(callback);
   }
   publishAction(action) {
     if (!this.isConnected) {

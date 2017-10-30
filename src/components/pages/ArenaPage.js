@@ -30,7 +30,9 @@ class ArenaPage extends React.Component {
     this.requestedCharacterFirstName = this.props.match.params.firstName;
     this.state = getDefaultSharedGameState();
     this.client = new GameServerClient();
+
     this.onActionSelected = this.onActionSelected.bind(this);
+    this.onServerNotice = this.onServerNotice.bind(this);
   }
 
   onActionSelected(actionName) {
@@ -61,6 +63,10 @@ class ArenaPage extends React.Component {
       return [];
     }
     return this.state.players[this.client.sessionId].actions;
+  }
+
+  onServerNotice(callback) {
+    this.client.onUINotice(callback);
   }
 
   render() {
@@ -100,22 +106,15 @@ class ArenaPage extends React.Component {
         initialPosition={player.coords}
         component={PlayerAvatar}
       />);
-
-      //const url = this.profile[play]
-      /*
-      return (<Avatar
-        key={i}
-        name={player.firstName}
-        coords={player.coords}
-      />);
-      */
     });
 
     // Current player's name
     return (
       <div className="arena-page-wrapper">
-        <NotificationGroup notices={this.state.notices}/>
-        
+        <NotificationGroup
+          onServerNotice={this.onServerNotice}
+        />
+
         <ActionPanel
           onActionSelected={this.onActionSelected}
           actions={this.getAvailableActions()}

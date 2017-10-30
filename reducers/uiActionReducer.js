@@ -1,6 +1,8 @@
 const clone = require('clone');
+const Constants = require('../src/GameServerConstants');
+const publishUINotice = require('../publishUINotice');
 
-module.exports = function uiActionReducer(state, action, client) {
+module.exports = function uiActionReducer(state, action, client, actionHandler) {
   let newState = clone(state);
   const player = newState.players[ action.sessionId ];
 
@@ -20,6 +22,8 @@ module.exports = function uiActionReducer(state, action, client) {
       player.coords.y-= moveDistance;
     break;
   }
+
+  publishUINotice(`player moved`);
 
   return newState;
 }

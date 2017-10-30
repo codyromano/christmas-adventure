@@ -3,13 +3,12 @@ const Constants = require('../src/GameServerConstants');
 const nextActionReducer = require('./nextActionReducer');
 const uiActionReducer = require('./uiActionReducer');
 const bootPlayerReducer = require('./bootPlayerReducer');
-const notificationReducer = require('./notificationReducer');
 const addPlayerReducer = require('./addPlayerReducer');
 
-module.exports = function primaryReducer(state, action, client, actionHandler) {
+module.exports = function primaryReducer(state, action, client) {
   let newState = clone(state);
 
-  newState = addPlayerReducer(newState, action, client, actionHandler);
+  newState = addPlayerReducer(newState, action, client);
   newState = nextActionReducer(newState, action, client);
 
   switch(action.type) {
@@ -20,7 +19,7 @@ module.exports = function primaryReducer(state, action, client, actionHandler) {
       newState = bootPlayerReducer(state, action, client);
     break;
     case Constants.UI_MESSAGE:
-      newState = notificationReducer(state, action, client, actionHandler);
+      newState = notificationReducer(state, action, client);
     break;
   }
 

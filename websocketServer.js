@@ -1,4 +1,7 @@
 const io = require('socket.io')();
+module.exports = io;
+
+
 const clone = require('clone');
 const Constants = require('./src/GameServerConstants');
 const getDefaultSharedGameState = require('./src/getDefaultSharedGameState');

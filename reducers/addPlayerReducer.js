@@ -2,7 +2,7 @@ const clone = require('clone');
 const shortid = require('shortid');
 const Constants = require('../src/GameServerConstants');
 
-module.exports = function addPlayerReducer(state, action, client, actionHandler) {
+module.exports = function addPlayerReducer(state, action, client) {
   let newState = clone(state);
 
   switch (action.type) {
@@ -30,11 +30,6 @@ module.exports = function addPlayerReducer(state, action, client, actionHandler)
         newState.players[ newPlayer.sessionId ] = newPlayer;
         client.emit(Constants.BROADCAST_CLIENT_STATE, newPlayer);
       }
-
-      actionHandler(client, {
-        type: Constants.UI_MESSAGE,
-        content: `${action.firstName} joined the game`
-      });
     break;
   }
 
