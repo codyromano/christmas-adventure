@@ -7,15 +7,36 @@ export default class NotificationGroup extends React.Component {
     this.state = {
       notices: []
     };
+
     this.renderNotice = this.renderNotice.bind(this);
   }
+
+  isExpired(notice) {
+    return (new Date().getTime() - notice.time) >= this.props.secondsPerNotice * 1000;
+  }
+
   componentDidMount() {
     this.props.onServerNotice(notice => {
-      const notices = this.state.notices.concat(notice);
-      this.setState({ notices });
+      this.setState({
+        notices: this.state.notices.concat(notice)
+      });
     });
+
+    // Remove oldest elements to make room for new ones
+    window.setInterval(() => {
+      const { notices } = this.state;
+      const oldest = notices[0];
+
+      const isFull = notices.length > this.props.maxNoticesVisible;
+
+      if (isFull && oldest && this.isExpired(oldest)) {
+        this.setState({
+          notices: notices.slice(1)
+        });
+      }
+    }, 1000);
   }
-  renderNotice(notice, i) {
+  renderNotice({ content }, i) {
     const opacity = 1 - (i / this.props.maxNoticesVisible);
     const styles = { opacity };
 
@@ -23,13 +44,18 @@ export default class NotificationGroup extends React.Component {
       <li
         key={i}
         style={styles}
-      >{notice.content}</li>
+      >{content}</li>
     );
   }
   render() {
+    const notices = this.state.notices
+      .slice(0, this.props.maxNoticesVisible)
+      .reverse()
+      .map(this.renderNotice);
+
     return (
       <ul>
-        {this.state.notices.map(this.renderNotice)}
+        {notices}
       </ul>
     );
   }
