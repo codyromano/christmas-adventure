@@ -9,7 +9,7 @@ import './ArenaPage.css';
 import Avatar from '../Avatar';
 import ActionPanel from '../ActionPanel';
 import Star from '../Star';
-import NotificationGroup from '../NotificationGroup';
+import { NotificationGroup } from '../notifications';
 import { CollisionProvider } from '../../collision';
 
 function getDefaultPrivateGameState() {
