@@ -33,6 +33,10 @@ class ArenaPage extends React.Component {
 
     this.onActionSelected = this.onActionSelected.bind(this);
     this.onServerNotice = this.onServerNotice.bind(this);
+
+    this.client.onUINotice(notice => {
+      console.log(`Received "${notice.content}" at ${performance.now()}`);
+    });
   }
 
   onActionSelected(actionName) {

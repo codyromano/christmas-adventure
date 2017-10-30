@@ -23,7 +23,7 @@ module.exports = function uiActionReducer(state, action, client, actionHandler) 
     break;
   }
 
-  publishUINotice(`player moved at ${new Date().toString()}`);
+  publishUINotice(`${player.firstName} is on the move`);
 
   return newState;
 }

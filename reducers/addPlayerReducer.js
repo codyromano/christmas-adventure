@@ -1,6 +1,7 @@
 const clone = require('clone');
 const shortid = require('shortid');
 const Constants = require('../src/GameServerConstants');
+const publishUINotice = require('../publishUINotice');
 
 module.exports = function addPlayerReducer(state, action, client) {
   let newState = clone(state);
@@ -30,6 +31,7 @@ module.exports = function addPlayerReducer(state, action, client) {
         newState.players[ newPlayer.sessionId ] = newPlayer;
         client.emit(Constants.BROADCAST_CLIENT_STATE, newPlayer);
       }
+      publishUINotice(`${newPlayer.firstName} joined the game`);
     break;
   }
 

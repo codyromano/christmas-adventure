@@ -1,0 +1,16 @@
+.notification-group {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 20rem;
+  color: #fff;
+  padding: 0;
+  padding-left: var(--gutter-padding);
+  margin: 0;
+}
+.notification {
+  font-size: var(--font-size-small);
+  display: block;
+  padding: 0;
+}

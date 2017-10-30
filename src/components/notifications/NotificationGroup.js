@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './NotificationGroup.css';
 
 export default class NotificationGroup extends React.Component {
   constructor() {
@@ -36,14 +37,17 @@ export default class NotificationGroup extends React.Component {
       }
     }, 1000);
   }
-  renderNotice({ content }, i) {
+  renderNotice(notice, i) {
     const opacity = 1 - (i / this.props.maxNoticesVisible);
     const styles = { opacity };
+
+    const content = notice.content.slice(0, this.props.noticeLengthLimit);
 
     return (
       <li
         key={i}
         style={styles}
+        className="notification"
       >{content}</li>
     );
   }
@@ -54,7 +58,7 @@ export default class NotificationGroup extends React.Component {
       .map(this.renderNotice);
 
     return (
-      <ul>
+      <ul className="notification-group">
         {notices}
       </ul>
     );
@@ -63,10 +67,12 @@ export default class NotificationGroup extends React.Component {
 
 NotificationGroup.defaultProps = {
   maxNoticesVisible: 3,
-  secondsPerNotice: 3
+  secondsPerNotice: 3,
+  noticeLengthLimit: 30
 };
 
 NotificationGroup.propTypes = {
+  noticeLengthLimit: PropTypes.number,
   onServerNotice: PropTypes.func.isRequired,
   maxNoticesVisible: PropTypes.number,
   secondsPerNotice: PropTypes.number
