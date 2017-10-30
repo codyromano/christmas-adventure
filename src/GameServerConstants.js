@@ -5,8 +5,7 @@ module.exports = {
   ACTION_ADD_PLAYER: 'ADD_PLAYER',
   PUBLISH_ACTION: 'publishAction',
   BROADCAST_STATE: 'broadcastState',
-  MESSAGE_PLAYER: 'messagePlayer',
-  MESSAGE_GROUP: 'messageGroup',
+  UI_MESSAGE: 'serverHasMessageForClientToDisplay',
   UI_ACTION: 'inGamePlayerUIAction',
   BOOT_PLAYER: 'bootPlayer',
   // Share state only with the publisher of a request
