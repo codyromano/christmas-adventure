@@ -7,6 +7,7 @@ export default class NotificationGroup extends React.Component {
     this.state = {
       notices: []
     };
+    this.renderNotice = this.renderNotice.bind(this);
   }
   componentDidMount() {
     this.props.onServerNotice(notice => {
@@ -14,19 +15,28 @@ export default class NotificationGroup extends React.Component {
       this.setState({ notices });
     });
   }
+  renderNotice(notice, i) {
+    const opacity = 1 - (i / this.props.maxNoticesVisible);
+    const styles = { opacity };
+
+    return (
+      <li
+        key={i}
+        style={styles}
+      >{notice.content}</li>
+    );
+  }
   render() {
     return (
       <ul>
-        {this.state.notices.map((notice, i) => (
-          <li>{notice.content}</li>
-        ))}
+        {this.state.notices.map(this.renderNotice)}
       </ul>
     );
   }
 }
 
 NotificationGroup.defaultProps = {
-  maxNoticesVisible: 5,
+  maxNoticesVisible: 3,
   secondsPerNotice: 3
 };
 
