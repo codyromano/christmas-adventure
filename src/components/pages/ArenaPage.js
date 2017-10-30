@@ -9,6 +9,7 @@ import './ArenaPage.css';
 import Avatar from '../Avatar';
 import ActionPanel from '../ActionPanel';
 import Star from '../Star';
+import NotificationGroup from '../NotificationGroup';
 import { CollisionProvider } from '../../collision';
 
 function getDefaultPrivateGameState() {
@@ -113,6 +114,8 @@ class ArenaPage extends React.Component {
     // Current player's name
     return (
       <div className="arena-page-wrapper">
+        <NotificationGroup notices={this.state.notices}/>
+        
         <ActionPanel
           onActionSelected={this.onActionSelected}
           actions={this.getAvailableActions()}
