@@ -14,7 +14,8 @@ import { CollisionProvider } from '../../collision';
 
 function getDefaultPrivateGameState() {
   return {
-    _player: {}
+    _player: {},
+    notices: []
   };
 }
 
@@ -28,7 +29,6 @@ class ArenaPage extends React.Component {
     );
 
     this.requestedCharacterFirstName = this.props.match.params.firstName;
-    this.state = getDefaultSharedGameState();
     this.client = new GameServerClient();
 
     this.onActionSelected = this.onActionSelected.bind(this);
@@ -58,6 +58,13 @@ class ArenaPage extends React.Component {
     // Listen for state changes triggered by other users
     this.client.onSharedStateChange(newState => {
       this.setState(newState);
+    });
+
+    // Listen for notifications sent to all players
+    this.client.onUINotice(notice => {
+      this.setState({
+        notices: this.state.notices.concat(notice)
+      })
     });
   }
 
@@ -116,7 +123,7 @@ class ArenaPage extends React.Component {
     return (
       <div className="arena-page-wrapper">
         <NotificationGroup
-          onServerNotice={this.onServerNotice}
+          notices={this.state.notices}
         />
 
         <ActionPanel
