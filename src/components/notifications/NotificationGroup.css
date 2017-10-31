@@ -5,7 +5,6 @@
   z-index: 1;
   width: 20rem;
   color: #fff;
-  padding: 0;
   padding-left: var(--gutter-padding);
   margin: 0;
 }

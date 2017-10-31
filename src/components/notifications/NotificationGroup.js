@@ -11,6 +11,7 @@ export default class NotificationGroup extends React.Component {
     // Display the last 3 notifications
     const notices = this.props.notices
       .slice(-this.props.maxNoticesVisible)
+      .reverse()
       .map((notice, i) => (
         <Notification
           notice={notice}
