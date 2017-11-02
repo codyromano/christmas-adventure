@@ -21,9 +21,11 @@ export default class NotificationGroup extends React.Component {
       ));
 
     return (
-      <ul className="notification-group">
-        {notices}
-      </ul>
+      <div className="notification-group-wrapper">
+        <ul className="notification-group">
+          {notices}
+        </ul>
+      </div>
     );
   }
 }

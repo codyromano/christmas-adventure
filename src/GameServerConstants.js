@@ -12,5 +12,5 @@ module.exports = {
   BROADCAST_CLIENT_STATE: 'broadcastClientState',
   WEBSOCKET_PORT: 8888,
   //WEBSOCKET_URL: 'http://192.168.0.14'
-  WEBSOCKET_URL: 'http://localhost'
+  WEBSOCKET_URL: 'http://192.168.0.14'
 };
