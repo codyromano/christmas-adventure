@@ -1,9 +1,11 @@
 [
   {
     "firstName": "Cait",
-    "image": "images/character-select-cait.jpg",
-    "avatarImage": "images/avatar-cait-bg-effect.png",
-    "avatarImageArena": "images/avatar-cait.png",
+    "image": "images/character-select-cait.png",
+    "avatarImage_deprecated": "images/avatar-cait-bg-effect.png",
+    "avatarImage": "https://lh3.googleusercontent.com/u/0/d/0B1-qtDiPk-zQOVM3WnJLazJhWWM=s3200-k-iv1",
+    "avatarImageArena_deprecated": "images/avatar-cait.png",
+    "avatarImageArena": "https://lh3.google.com/u/0/d/0B1-qtDiPk-zQM2tBaEhRVFRXLTQ=w2876-h1566-iv1",
     "aboutPowers": [
       {
         "title": "Laser light show",
@@ -18,6 +20,8 @@
   {
     "firstName": "Kim",
     "image": "images/character-select-kim.jpg",
+    "avatarImage": "images/avatar-kim-bg-effect.png",
+    "avatarImageArena": "images/avatar-kim.png",
     "aboutPowers": [
       {
         "title": "Director says freeze",

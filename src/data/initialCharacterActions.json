@@ -1,7 +1,7 @@
 {
   "Cait": ["Move left", "Move right", "Move down", "Move up"],
   "Chris": ["Move left", "Move right", "Move down", "Move up"],
-  "Kim": ["A", "B"],
+  "Kim": ["Move left", "Move right", "Move down", "Move up"],
   "Marsheila": ["A", "B"],
   "Amanda": ["A", "B"],
   "Jack": ["A", "B"]
